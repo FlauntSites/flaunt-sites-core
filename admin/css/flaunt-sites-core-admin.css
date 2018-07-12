@@ -1,0 +1,219 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+
+/**
+* Customizer Styles
+*/
+
+#customize-controls .customize-info .accordion-section-title{
+    text-align: center;
+    background-color:#000;
+ }
+
+ #customize-controls img{
+	max-width: 100%;
+	height: 150px;
+	margin: 0 auto;
+	text-align: center;
+	display: block;
+ }
+
+
+ #wpadminbar li#wp-admin-bar-pro-site a span{
+    padding: 3px 30px!important;
+    border: 1px solid #D64B27!important;
+    background-color: #D64B27!important;
+ }
+
+#admin-wrap{
+    width:100%;
+	margin-left: -21px;
+	float: left;
+	margin-top: 0;
+
+}
+
+.admin-logo{
+	background-image: url('../images/flaunt-logo.png');
+	background-repeat: no-repeat;
+	float: left;
+	width: 172px;
+	height: 118px;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+
+.nav-tab-wrapper{
+	border-left:1px solid #333;
+}
+
+.admin-header{
+	background-image: url('../images/header-bg.png');
+	background-repeat: repeat-x;
+	float: left;
+	width: 100%;
+	height: 189px;
+	border-top:1px solid #333;	
+	border-left:1px solid #333;
+}
+
+.flaunt-admin-title{
+	font-family: 'dincond-lightregular', arial, sans-serif;
+	letter-spacing:2px;
+	color: #DACFB4;
+	float: left;
+	margin-top: 40px!important;
+}
+
+.custom-site-cta{
+	float: right;
+	width:400px;
+	margin-right: 250px;
+}
+
+.custom-site-cta p{
+	font-family: 'dincond-lightregular', arial, sans-serif;
+	letter-spacing:2px;
+	color: #DACFB4;
+	font-size: 18px;
+}
+
+.custom-site-cta-orange{
+	color: #D64C27;
+	font-size: 18px;
+}
+
+.custom-site-cta-button{
+	font-family: 'dincond-lightregular', arial, sans-serif;
+	letter-spacing:2px;
+	color: #DACFB4;
+	font-size: 18px;
+	background-color: #D64C27;
+	padding: 5px 25px 5px 25px;
+	width: 200px;
+	border-radius: 5px;
+	text-align: center;
+	margin: 0 auto;
+	text-decoration: none;
+}
+.custom-site-cta-button:hover{
+	color: #ccc;
+}
+
+
+.admin-entry-content{
+	margin-left:20px; 
+}
+
+.icon32{
+	background-image: url('../images/admin-icon.png');
+	width: 32px;
+	height: 32px;
+	float: left;
+	display: inherit;
+	background-size:contain;
+	margin: 0 10px 0 10px;
+}
+
+.nav-tab{
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+}
+
+
+#admin-wrap form p.submit{
+	margin-left: 10px;
+}
+
+@font-face {
+    font-family: 'dincond-lightregular';
+    src: url('../fonts/din_condensed_light-webfont.eot');
+    src: url('../fonts/din_condensed_light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/din_condensed_light-webfont.woff') format('woff'),
+         url('../fonts/din_condensed_light-webfont.ttf') format('truetype'),
+         url('../fonts/din_condensed_light-webfont.svg#dincond-lightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+.tint{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+    background-color: rgba(0,0,0,0.7);
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.welcome-modal {
+    width: 90vw;
+	height: 88vh;
+    position: absolute;
+    background-color: rgba(255,255,255, .9);
+    z-index: 1000000;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+	border: 1px solid #666;
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 8em auto;
+    grid-template-areas: "header header" "1fr 1fr" "footer footer";
+}
+
+.welcome-modal header{
+	grid-area: header;
+	margin: 2em 0; 
+	text-align: center;
+	font-family: 'Julius Sans One', sans-serif;
+}
+.welcome-modal header h1{
+	color:#D64C27;
+}
+
+.welcome-modal footer{
+	grid-area: footer;
+	margin: 2em 0; 
+	text-align: center;
+	font-family: 'Julius Sans One', sans-serif;
+}
+
+.welcome-modal footer button {
+	background: #D64C27;
+	padding: 1em;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+
+.welcome-modal .stripes-container{
+	margin: 0;
+}
+
+.welcome-modal div{
+	margin: 2em;
+}
+
+.welcome-modal iframe{
+}
+
+
+.stripes{
+	width: 100%;
+    height: 5px;
+    margin: 0 0 5px;
+	margin-left: -100%;
+}

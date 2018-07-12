@@ -1,0 +1,68 @@
+body, html, #login, body.wu-setup{
+    background-color: #333;
+}
+
+#login{
+    width:60%;
+    margin: 0 auto;
+}
+
+.login h1{
+    position: relative;
+}
+
+.login h1 a{
+    background-size: contain!important;
+    width:320px;
+}
+
+.wu-plans-frequency-selector{
+    background-color: #dedede;
+}
+
+.wu-plans-frequency-selector li a{
+    margin:0;
+}
+
+.wu-plans-frequency-selector li a.active{
+    background-color: #d64b26;
+}
+
+.wu-content-plan .plan-tier{
+    border-radius: 10px;
+}
+
+.plan-tier.callout h4{
+    border-bottom: 1px solid #c54523;
+}
+
+.wu-content-plan.wu-content-plan p{
+    margin-top: 1em!important;
+}
+
+
+.picture{
+    background-image: url(https://williambay.com/wp-content/uploads/2016/12/ocean-beach-skate-park-0001-1024x682.jpg);
+    height: 300px;
+    width:400px;
+    position: relative;
+    display: block;
+}
+
+.rain{
+    width: 200px;
+    height: auto;
+    display: block;
+    position: absolute;
+}
+
+
+#blogname-field .dashicons{
+    width:inherit;
+}
+
+#blogname-field .dashicons-editor-help:after {
+    content: "Enter your domain without the .com or .net";
+    font-size: 10px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
