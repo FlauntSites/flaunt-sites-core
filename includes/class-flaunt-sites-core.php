@@ -221,41 +221,48 @@ class Flaunt_Sites_Core {
 }
 
 
-// ADDS AN OPTION PAGE
-if( function_exists('acf_add_options_page') ) {
+/**
+ * ACF fields. Backwards compatible for Padang Padang until full Gutenberg integration.
+ */
 
-	acf_add_options_page(
-    $args = array(
-      'page_title' 	=> 'Flaunt Options',
-    )
+$my_theme = wp_get_theme();
+if ($my_theme == 'Padang Padang'){
 
-  );
+	// Home fields
+	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-home-fields.php';
+	// Other fields
+	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-option-fields.php';
+	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-service-fields.php';
+	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-reviews-fields.php';
+	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-badges-fields.php';	
+
+	// ADDS AN OPTION PAGE
+	if( function_exists('acf_add_options_page') ) {
+
+		acf_add_options_page(
+			$args = array(
+				'page_title' 	=> 'Flaunt Options',
+			)
+		);
+
+	}
 
 }
 
-
 /**
- * Grabs the Home page fields
+ * 
+ * Loads all Core Custom Post Types
+ * Services
+ * Reviews
+ * Badges
  */
-
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-home-fields.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-custom-post-types.php';
 
 /**
- * Grabs the Sharebar
+ * Loads the Sharebar
  */
 
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-sharebar.php';
-
-
-/**
- * Grab the core Custom Post Types & respective custom field parameters.
- */
-
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-custom-post-types.php';
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-option-fields.php';
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-service-fields.php';
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-reviews-fields.php';
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-badges-fields.php';
 
 
 /**
@@ -269,9 +276,8 @@ function fsc_remove_yoast_cpts() {
 add_action('add_meta_boxes', 'fsc_remove_yoast_cpts', 100);
 
 
-
 /**
- * All of the Flaunt Your Site Widgets
+ * Loads Flaunt Sites Core Widgets
  */
 
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-widgets.php';
@@ -309,7 +315,7 @@ function enqueue_main_scripts(){
 	//Adds Scrollmagik support
 	wp_enqueue_script( 'scrollmagic', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js' );
 	// wp_enqueue_script( 'scrollmagic_indicators', plugin_dir_url( dirname( __FILE__ ) ) . 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js' );
-	// wp_enqueue_script( 'scrollmagic_gsap_support', plugin_dir_url( dirname( __FILE__ ) ) . 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js' );
+	wp_enqueue_script( 'scrollmagic_gsap_support', plugin_dir_url( dirname( __FILE__ ) ) . 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js' );
 
 	//Adds Swiper Slider support
 	wp_enqueue_script( 'swiper_scripts', '//cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.3/js/swiper.min.js' );
@@ -338,8 +344,6 @@ add_action( 'wp_enqueue_scripts', 'enqueue_additional_styles' );
 	
 
 
-
-
 //Adds additional thumbnail sizes.
 add_image_size( 'oversized', '1400', '1400', false ); 
 add_image_size( 'fullscreen', '2000', '2000', false ); 
@@ -349,7 +353,6 @@ add_image_size( 'fullscreen', '2000', '2000', false );
  * Controls the output of Social Media icons from the 
  * 
  */
-
 
 //  Needs to be re-written to extract data from Theme Options.
 
