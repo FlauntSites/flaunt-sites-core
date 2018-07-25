@@ -14,9 +14,9 @@
  *
  * @wordpress-plugin
  * Plugin Name:       		Flaunt Sites Core
- * Bitbucket Plugin URI:    https://bitbucket.org/FlauntYourSite/flaunt-sites-core
+ * GitHub Plugin URI:    	https://github.com/FlauntSites/flaunt-sites-core
  * Description:       		Controls all of the Flaunt Sites functions.
- * Version:           		0.4.6
+ * Version:           		0.4.7
  * Author:            		William Bay
  * Author URI:        		http://williambay.com
  * License:           		GPL-2.0+
