@@ -315,33 +315,17 @@ function enqueue_main_scripts(){
 	//Adds Scrollmagik support
 	wp_enqueue_script( 'scrollmagic', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js' );
 	// wp_enqueue_script( 'scrollmagic_indicators', plugin_dir_url( dirname( __FILE__ ) ) . 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js' );
-	wp_enqueue_script( 'scrollmagic_gsap_support', plugin_dir_url( dirname( __FILE__ ) ) . 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js' );
+	wp_enqueue_script( 'scrollmagic_gsap_support', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js', array(), '20180816' );
 
 	//Adds Swiper Slider support
-	wp_enqueue_script( 'swiper_scripts', '//cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.3/js/swiper.min.js' );
+	wp_enqueue_script( 'swiper_scripts', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js', array(), '20180816'  );
+	wp_enqueue_style( 'swiper_styles', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css' );
 
 }
 
 add_action( 'login_enqueue_scripts', 'enqueue_main_scripts' );
 add_action( 'wp_enqueue_scripts', 'enqueue_main_scripts' );
 
-
-/**
-* Enqueues Additonal Styles files.
-*
-* @since     1.0.0
-*
-*/
-
-function enqueue_additional_styles(){
-
-		//Adds Swiper Slider styles
-		wp_enqueue_style( 'swiper_styles', '//cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.3/css/swiper.min.css' );
-	
-	}
-
-add_action( 'wp_enqueue_scripts', 'enqueue_additional_styles' );
-	
 
 
 //Adds additional thumbnail sizes.

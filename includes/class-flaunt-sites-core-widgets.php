@@ -29,38 +29,33 @@ class FS_Reviews extends WP_Widget {
           'post_type'   => 'reviews',
           'orderby'     => 'rand',
          )
-     );
+     ); ?>
 
-     ?>
+	<!-- Begin Markup -->
+	<h3><a href="/reviews">Raves + Reviews</a></h3>
 
-          <?php if ( $the_query->have_posts() ) : ?>
-		  	<li class="footer-widget">
-				<h3 class="sidebar-title"><a href="/reviews">Raves + Reviews</a></h3>
+	<?php if ( $the_query->have_posts() ) : ?>
+		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+			<div class="review-small">
 
-					<div class="review-small">
+				<div>
+					<img class="round-thumb" itemprop="image" src="<?php the_post_thumbnail_url( 'thumbnail' ); ?>">
+					<blockquote class="quote-small"><span class="quote">&ldquo;</span><?php the_field( 'fsc_review_quote' ); ?><span class="quote">&rdquo;</span></blockquote>
+				</div>
 
-						<div>
-							<img class="round-thumb" itemprop="image" src="<?php the_post_thumbnail_url( 'thumbnail' ); ?>">
-							<blockquote class="quote-small"><span class="quote">&ldquo;</span><?php the_field( 'fsc_review_quote' ); ?><span class="quote">&rdquo;</span></blockquote>
-						</div>
+				<div class="clear"></div>
+				<p class="handwrite">~<?php the_title(); ?></p>
 
-						<div class="clear"></div>
-						<p class="handwrite">~<?php the_title(); ?></p>
+			</div>
 
-					</div>
+		<?php endwhile; ?>
+	<?php wp_reset_postdata(); ?>
 
-            	<?php endwhile; ?>
+	<?php else : ?>
+	<p><?php _e( 'Oops. Looks like you need to add some Reviews.' ); ?></p>
+	<?php endif; ?>
 
-			</li>
-			
-            <?php wp_reset_postdata(); ?>
-
-          <?php else : ?>
-            <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-          <?php endif; ?>
-	
 
 	<?php }
 
@@ -166,8 +161,6 @@ class FS_Client_Posts extends WP_Widget {
 
             <?php wp_reset_postdata(); ?>
 
-          <?php else : ?>
-            <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
           <?php endif; ?>
 	
 
@@ -354,7 +347,6 @@ class FS_Badges extends WP_Widget {
 
      ?>
 
-		<div class="footer-widget">
 		<h3>As featured in...</h3>
 
 		<?php if ( $the_query->have_posts() ) : ?>
@@ -371,10 +363,8 @@ class FS_Badges extends WP_Widget {
 					<?php wp_reset_postdata(); ?>
 
 					<?php else : ?>
-						<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+						<p><?php _e( 'Oops. Looks like you need to add some Badges.' ); ?></p>
 					<?php endif; ?>
-
-					</div>
 		<?php }
 
 
