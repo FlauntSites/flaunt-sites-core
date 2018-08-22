@@ -13,6 +13,10 @@ Controls all of the Flaunt Sites functions.
 
 == Changelog ==
 
+= 0.4.7 =
+* Adjusted widget output.
+* Cleaned up the call to Swiper Slider API.  
+
 = 0.4.6 =
 * Made ACF support backwards compatible for Padang Padang theme. 
 

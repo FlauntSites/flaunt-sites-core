@@ -180,8 +180,9 @@ function fsc_post_types() {
 			'capability_type' => 'post',
 			'hierarchical' => false,
 			/* the next one is important, it tells what's enabled in the post editor */
-			'supports' => array( 'title', 'thumbnail', 'revisions'),
+			'supports' => array( 'title', 'editor', 'thumbnail', 'revisions'),
 			'show_in_nav_menus' => false, 
+			'show_in_rest' => true,
 		) /* end of options */
 	); /* end of register post type */
 
@@ -224,6 +225,7 @@ register_taxonomy_for_object_type( 'category', 'reviews' );
 			/* the next one is important, it tells what's enabled in the post editor */
 			'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'sticky'),
 			'show_in_nav_menus' => false,
+			'show_in_rest' => true,
 		) /* end of options */
 	); /* end of register post type */
 
