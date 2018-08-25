@@ -1,0 +1,33 @@
+Flaunt Sites Core
+===
+
+## Description: 
+Controls all of the Flaunt Sites functions.
+## Version: 
+0.4.9
+## Contributors
+@bahia0019
+
+## Changelog
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
+and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+
+## [0.4.9]
+### Changed 
+-Fixed issue where social icons weren't displaying when URLs were added.  
+
+## [0.4.7]
+### Changed 
+-Adjusted widget output.
+-Cleaned up the call to Swiper Slider API.  
+
+## [0.4.6]
+### Changed 
+-Made ACF support backwards compatible for Padang Padang theme. 
+
+## [0.4.5]
+### Changed 
+-Initial commit.
+

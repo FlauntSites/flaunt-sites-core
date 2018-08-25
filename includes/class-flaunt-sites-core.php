@@ -343,9 +343,9 @@ add_image_size( 'fullscreen', '2000', '2000', false );
 function fsc_social_icons( $social_network ){
 		$social_network 	= 	$social_network;
 		$fsc_options		= 	get_option( 'fsc_options' ); 
-		// $social_url 		= 	$fsc_options[ 'fsc_' . $social_network . '_url' ];
+		$social_url 		= 	$fsc_options[ 'fsc_' . $social_network . '_url' ];
 
-		if( isset( $social_url )): { ?>
+		if( "" !== $social_url ): { ?>
 
 			<a class="social-icon" target="_blank" href="<?php echo esc_url( $social_url ) ?>">
 				<svg class="fs-icons">
