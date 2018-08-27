@@ -52,59 +52,59 @@ function fsc_post_types() {
 	// Add a Gutenberg Post Type Template to dictate what appears on Custom Post edit screen.
 	$template = array(
 
-		array( 'core/heading', 
-				array( 
-					'placeholder' => 'Add a section title ( e.g. Philosophy, Rates, Areas Served, Competitive Advantage',
-				) 
-			),
+		// array( 'core/heading', 
+		// 		array( 
+		// 			'placeholder' => 'Add a section title ( e.g. Philosophy, Rates, Areas Served, Competitive Advantage',
+		// 		) 
+		// 	),
 
-		array( 'core/columns', 
-				array(), 
-				array(
-					array( 'core/image', 
-						array( 'layout' => 'column-1' ) 
-					),
+		// array( 'core/columns', 
+		// 		array(), 
+		// 		array(
+		// 			array( 'core/image', 
+		// 				array( 'layout' => 'column-1' ) 
+		// 			),
 
-					array( 'core/paragraph', 
-						array( 'placeholder' => 'Add an inner paragraph',
-								'layout' => 'column-2'
-							) 
-					),
-				),
-			),
+		// 			array( 'core/paragraph', 
+		// 				array( 'placeholder' => 'Add an inner paragraph',
+		// 						'layout' => 'column-2'
+		// 					) 
+		// 			),
+		// 		),
+		// 	),
 
-		array( 'core/columns', 
-				array(), 
-				array(
-					array( 'core/gallery', 
-						array( 'layout' => 'column-1' 
-						) 
-					),
+		// array( 'core/columns', 
+		// 		array(), 
+		// 		array(
+		// 			array( 'core/gallery', 
+		// 				array( 'layout' => 'column-1' 
+		// 				) 
+		// 			),
 
-					array( 'core/paragraph', 
-						array( 'placeholder' => 'Add an inner paragraph',
-							'layout' => 'column-2'
-						) 
-					),
-				),
-			),
+		// 			array( 'core/paragraph', 
+		// 				array( 'placeholder' => 'Add an inner paragraph',
+		// 					'layout' => 'column-2'
+		// 				) 
+		// 			),
+		// 		),
+		// 	),
 
-		array( 'core/columns', 
-				array(), 
-				array(
-					array( 'core/image', 
-						array( 'layout' => 'column-1' 
-						) 
-					),
+		// array( 'core/columns', 
+		// 		array(), 
+		// 		array(
+		// 			array( 'core/image', 
+		// 				array( 'layout' => 'column-1' 
+		// 				) 
+		// 			),
 
-					array( 'core/paragraph', 
-						array( 'placeholder' => 'Add an inner paragraph',
-							'layout' => 'column-2'
-						) 
-					),
-				),
-			),
-		);
+		// 			array( 'core/paragraph', 
+		// 				array( 'placeholder' => 'Add an inner paragraph',
+		// 					'layout' => 'column-2'
+		// 				) 
+		// 			),
+		// 		),
+		// 	),
+		// );
 
 	register_post_type( 'services',
 
