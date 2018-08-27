@@ -50,7 +50,7 @@ function fsc_post_types() {
 	global $show_in_menu;
 
 	// Add a Gutenberg Post Type Template to dictate what appears on Custom Post edit screen.
-	$template = array(
+	// $template = array(
 
 		// array( 'core/heading', 
 		// 		array( 
