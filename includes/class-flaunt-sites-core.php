@@ -10,7 +10,7 @@
  * @since      1.0.0
  *
  * @package    Flaunt_Sites_Core
- * @subpackage Flaunt_Sites_Core/includes
+ * @subpackage Flaunt_Sites_Core/includes 
  */
 
 /**
@@ -27,6 +27,7 @@
  * @subpackage Flaunt_Sites_Core/includes
  * @author     William Bay <william@flauntyoursite.com>
  */
+
 class Flaunt_Sites_Core {
 
 	/**
@@ -250,7 +251,6 @@ if ($my_theme == 'Padang Padang'){
 }
 
 /**
- * 
  * Loads all Core Custom Post Types
  * Services
  * Reviews
@@ -268,12 +268,11 @@ require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sit
 /**
  * Disables Yoast on specific CPTs
  */
-
 function fsc_remove_yoast_cpts() {
-	remove_meta_box( 'wpseo_meta', array( 'badges', 'reviews',  ), 'normal' );
+	remove_meta_box( 'wpseo_meta', array( 'badges', 'reviews' ), 'normal' );
 }
 
-add_action('add_meta_boxes', 'fsc_remove_yoast_cpts', 100);
+add_action( 'add_meta_boxes', 'fsc_remove_yoast_cpts', 100 );
 
 
 /**
@@ -292,32 +291,30 @@ define( 'GF_LICENSE_KEY', 'b98eeeedebdf74593d68cafbba23d12f' );
 /**
  * REMOVES WP EMOJI
  */
-remove_action('wp_head', 'print_emoji_detection_script', 7);
-remove_action('wp_print_styles', 'print_emoji_styles');
-
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 
 
 /**
-* Enqueues Main Script files.
-*
-* @since     1.0.0
-*
-*/
-
+ * Enqueues Main Script files.
+ *
+ * @since     1.0.0
+ *
+ */
 function enqueue_main_scripts(){
 
-	//Adds Greensock support
+	//Adds Greensock support.
 	wp_enqueue_script( 'greensock', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js');
 
-	//Adds Scrollmagik support
+	//Adds Scrollmagik support.
 	wp_enqueue_script( 'scrollmagic', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js' );
 	// wp_enqueue_script( 'scrollmagic_indicators', plugin_dir_url( dirname( __FILE__ ) ) . 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js' );
 	wp_enqueue_script( 'scrollmagic_gsap_support', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js', array(), '20180816' );
 
-	//Adds Swiper Slider support
+	//Adds Swiper Slider support.
 	wp_enqueue_script( 'swiper_scripts', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js', array(), '20180816'  );
 	wp_enqueue_style( 'swiper_styles', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css' );
 
@@ -329,32 +326,28 @@ add_action( 'wp_enqueue_scripts', 'enqueue_main_scripts' );
 
 
 //Adds additional thumbnail sizes.
-add_image_size( 'oversized', '1400', '1400', false ); 
-add_image_size( 'fullscreen', '2000', '2000', false ); 
+add_image_size( 'medium_square', '600', '600', true );
+add_image_size( 'oversized', '1400', '1400', false );
+add_image_size( 'fullscreen', '2000', '2000', false );
 
 
 /**
- * Controls the output of Social Media icons from the 
- * 
+ * Controls the output of Social Media icons.
+ *
  */
+function fsc_social_icons( $social_network ) {
+		$social_network = $social_network;
+		$fsc_options = get_option( 'fsc_options' ); 
+		$social_url = $fsc_options[ 'fsc_' . $social_network . '_url' ];
 
-//  Needs to be re-written to extract data from Theme Options.
-
-function fsc_social_icons( $social_network ){
-		$social_network 	= 	$social_network;
-		$fsc_options		= 	get_option( 'fsc_options' ); 
-		$social_url 		= 	$fsc_options[ 'fsc_' . $social_network . '_url' ];
-
-		if( "" !== $social_url ): { ?>
+		if ( '' !== $social_url ): { ?>
 
 			<a class="social-icon" target="_blank" href="<?php echo esc_url( $social_url ) ?>">
 				<svg class="fs-icons">
-					<use xlink:href="#icon-<?php echo $social_network ?>-square"></use>
+					<use xlink:href="#icon-<?php echo $social_network; ?>-square"></use>
 				</svg>
 			</a>
 
-		<?php } 
-		endif;
+		<?php
+		} endif;
 }
-
-
