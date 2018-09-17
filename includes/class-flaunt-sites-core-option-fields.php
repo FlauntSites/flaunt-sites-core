@@ -258,7 +258,7 @@ acf_add_local_field_group(array (
 			),
 			'default_value' => '',
 			'placeholder' => '',
-		),
+		), 
 		array (
 			'key' => 'field_58e6f07f3f33a',
 			'label' => 'Call To Action Options',
