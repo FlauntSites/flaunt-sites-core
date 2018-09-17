@@ -6,7 +6,7 @@ Controls all of the Flaunt Sites functions.
 
 ## Version:
 
-0.5.3
+0.5.2
 
 ## Contributors
 
@@ -18,13 +18,6 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
-
-## [0.5.3]
-
-### Changed
-
--Fixed code for Social Customizer.
--Linted some code.
 
 ## [0.5.2]
 

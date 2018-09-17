@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The file that defines the core plugin class
  *
@@ -9,7 +10,7 @@
  * @since      1.0.0
  *
  * @package    Flaunt_Sites_Core
- * @subpackage Flaunt_Sites_Core/includes
+ * @subpackage Flaunt_Sites_Core/includes 
  */
 
 /**
@@ -226,7 +227,7 @@ class Flaunt_Sites_Core {
  */
 
 $my_theme = wp_get_theme();
-if ( 'Padang Padang' === $my_theme ) {
+if ($my_theme == 'Padang Padang'){
 
 	// Home fields
 	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-home-fields.php';
@@ -237,7 +238,7 @@ if ( 'Padang Padang' === $my_theme ) {
 	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-badges-fields.php';	
 
 	// ADDS AN OPTION PAGE
-	if ( function_exists( 'acf_add_options_page' ) ) {
+	if( function_exists('acf_add_options_page') ) {
 
 		acf_add_options_page(
 			$args = array(
@@ -279,6 +280,13 @@ add_action( 'add_meta_boxes', 'fsc_remove_yoast_cpts', 100 );
  */
 
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-widgets.php';
+
+
+/**
+ * Establishes Gravity Forms license across the Network.
+ */
+define( 'GF_LICENSE_KEY', 'b98eeeedebdf74593d68cafbba23d12f' );
+
 
 /**
  * REMOVES WP EMOJI
@@ -325,20 +333,20 @@ add_image_size( 'fullscreen', '2000', '2000', false );
 
 /**
  * Controls the output of Social Media icons.
+ *
  */
 function fsc_social_icons( $social_network ) {
 		$social_network = $social_network;
-		$fsc_options = get_option( 'fsc_options' );
+		$fsc_options = get_option( 'fsc_options' ); 
 		$social_url = $fsc_options[ 'fsc_' . $social_network . '_url' ];
 
-	if ( isset( $social_url ) ) : {
-		?>
+		if ( '' !== $social_url ): { ?>
 
-		<a class="social-icon" target="_blank" href="<?php echo esc_url( $social_url ); ?>">
-			<svg class="fs-icons">
-				<use xlink:href="#icon-<?php echo $social_network; ?>-square"></use>
-			</svg>
-		</a>
+			<a class="social-icon" target="_blank" href="<?php echo esc_url( $social_url ) ?>">
+				<svg class="fs-icons">
+					<use xlink:href="#icon-<?php echo $social_network; ?>-square"></use>
+				</svg>
+			</a>
 
 		<?php
 		} endif;
