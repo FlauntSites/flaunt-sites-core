@@ -281,13 +281,6 @@ add_action( 'add_meta_boxes', 'fsc_remove_yoast_cpts', 100 );
 
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-widgets.php';
 
-
-/**
- * Establishes Gravity Forms license across the Network.
- */
-define( 'GF_LICENSE_KEY', 'b98eeeedebdf74593d68cafbba23d12f' );
-
-
 /**
  * REMOVES WP EMOJI
  */
