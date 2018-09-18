@@ -139,8 +139,8 @@ function fsc_post_types() {
 			/* the next one is important, it tells what's enabled in the post editor */
 			'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'revisions'),
 			'show_in_rest' => true,
-			'template' => $template,
-			'template_lock' => 'all',
+			// 'template' => $template,
+			// 'template_lock' => 'all',
 		)
 	);
 
