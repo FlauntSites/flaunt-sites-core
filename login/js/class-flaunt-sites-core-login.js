@@ -40,7 +40,7 @@ if (!document.querySelector("body").classList.contains("wu-setup")) {
 	ourRequest.open(
 		"GET",
 		flaunt_sites_custom_login_ajaxify.currentSite +
-			"/wp-json/wp/v2/media?_embed"
+			"/wp-json/wp/v2/posts?_embed"
 	)
 	ourRequest.onload = function() {
 		if (ourRequest.status >= 200 && ourRequest.status < 400) {
@@ -67,12 +67,18 @@ if (!document.querySelector("body").classList.contains("wu-setup")) {
 				"left",
 				Math.floor(Math.random() * screen.width) + "px"
 			)
-			rain.style.setProperty(
-				"background-image",
-				'url(" ' +
-					featuredImageData[i].media_details.sizes.medium.source_url +
-					' ")'
-			)
+
+			const backgroundSource =
+				featuredImageData[i]._embedded["wp:featuredmedia"]
+
+			if (backgroundSource) {
+				rain.style.setProperty(
+					"background-image",
+					'url(" ' +
+						backgroundSource[0].media_details.sizes.medium.source_url +
+						' ")'
+				)
+			}
 
 			rainStagger = document.body.appendChild(rain)
 
