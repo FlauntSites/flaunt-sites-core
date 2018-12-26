@@ -1,32 +1,33 @@
-(function( $ ) {
-	'use strict';
+/**
+ *
+ * Mobile Sharebar display
+ *
+ */
 
-	/**
-	 * All of the code for your public-facing JavaScript source
-	 * should reside in this file.
-	 *
-	 * Note: It has been assumed you will write jQuery code here, so the
-	 * $ function reference has been prepared for usage within the scope
-	 * of this function.
-	 *
-	 * This enables you to define handlers, for when the DOM is ready:
-	 *
-	 * $(function() {
-	 *
-	 * });
-	 *
-	 * When the window is loaded:
-	 *
-	 * $( window ).load(function() {
-	 *
-	 * });
-	 *
-	 * ...and/or other possibilities.
-	 *
-	 * Ideally, it is not considered best practise to attach more than a
-	 * single DOM-ready or window-load handler for a particular page.
-	 * Although scripts in the WordPress core, Plugins and Themes may be
-	 * practising this, we should strive to set a better example in our own work.
-	 */
+const mobileDisplaySharebar = function() {
+  const more = document.querySelector(".fs-drawer-mobile-more svg")
+  const drawer = document.querySelector(".fs-drawer")
 
-})( jQuery );
+  if (more) {
+    more.addEventListener("click", function() {
+      more.classList.toggle("toggled")
+      drawer.classList.toggle("toggled")
+    })
+  }
+}
+// window.onload = mobileDisplaySharebar
+
+/**
+ *
+ * Adjusts Swiper Slider to Responsive/Fixed Height based on 3/2 ratio.
+ *
+ */
+const swiperSliderResponsiveFix = function() {
+  if (document.querySelector(".swiper-wrapper")) {
+    const swiperContainer = document.querySelector(".swiper-wrapper")
+    swiperContainer.style =
+      "height:" + swiperContainer.offsetWidth * 0.666666667 + "px;!important "
+  }
+}
+swiperSliderResponsiveFix()
+window.onresize = swiperSliderResponsiveFix
