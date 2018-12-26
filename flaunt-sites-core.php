@@ -8,21 +8,21 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              		http://williambay.com
- * @since             		0.1
- * @package           		Flaunt_Sites_Core
+ * @link http://williambay.com
+ * @since 0.1
+ * @package Flaunt_Sites_Core
  *
  * @wordpress-plugin
- * Plugin Name:       		Flaunt Sites Core
- * GitHub Plugin URI:    	https://github.com/FlauntSites/flaunt-sites-core
- * Description:       		Controls all of the Flaunt Sites functions.
- * Version:           		0.5.6
- * Author:            		William Bay
- * Author URI:        		http://williambay.com
- * License:           		GPL-2.0+
- * License URI:       		http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       		flaunt-sites-core
- * Domain Path:       		/languages
+ * Plugin Name:       Flaunt Sites Core
+ * GitHub Plugin URI: https://github.com/FlauntSites/flaunt-sites-core
+ * Description:       Controls all of the Flaunt Sites functions.
+ * Version:           0.5.7
+ * Author:            William Bay
+ * Author URI:        http://williambay.com
+ * License:           GPL-2.0+
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain:       flaunt-sites-core
+ * Domain Path:       /languages
  */
 
 // If this file is called directly, abort.
