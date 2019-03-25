@@ -32,7 +32,6 @@ function fsc_schema_main(){
                     "<?php the_field( 'fsc_facebook_url', 'options' ); ?>",
                     "<?php the_field( 'fsc_twitter_url', 'options' ); ?>",
                     "<?php the_field( 'fsc_instagram_url', 'options' ); ?>",
-                    "<?php the_field( 'fsc_google_plus_url', 'options' ); ?>",
                     "<?php the_field( 'fsc_pinterest_url', 'options' ); ?>"
                 ]
             }
@@ -92,7 +91,6 @@ function fsc_schema_post(){
                 "datePublished": "<?php the_date(); ?>",
                 "publisher": "<?php the_author(); ?>",
                 "image": "<?php the_post_thumbnail_url( 'medium' ); ?>"
-
             }</script>
 
     <?php } 
