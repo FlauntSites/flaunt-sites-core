@@ -278,8 +278,12 @@ add_action( 'add_meta_boxes', 'fsc_remove_yoast_cpts', 100 );
 /**
  * Loads Flaunt Sites Core Widgets
  */
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/class-fs-badges.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/class-fs-call-to-action.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/class-fs-proofing.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/class-fs-related-client-posts.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/class-fs-reviews.php';
 
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-widgets.php';
 
 /**
  * REMOVES WP EMOJI

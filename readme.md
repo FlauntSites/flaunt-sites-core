@@ -6,7 +6,7 @@ Controls all of the Flaunt Sites functions.
 
 ## Version:
 
-0.5.9
+0.6.0
 
 ## Contributors
 
@@ -18,6 +18,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+
+## [0.5.9] - 2019-04-05
+
+### Changed
+
+-Separated widgets into individual files.
+-Fixed Reviews widget to display only 2 Reviews at a time.
 
 ## [0.5.9] - 2019-04-05
 
