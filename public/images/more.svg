@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: rgba(0,0,0,0.75);
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Symbol_1_1" data-name="Symbol 1 – 1" transform="translate(-323 -560)">
+    <circle id="Ellipse_1" data-name="Ellipse 1" class="cls-1" cx="15" cy="15" r="15" transform="translate(323 560)"/>
+    <g id="noun_more_965913" transform="translate(323 560)">
+      <g id="Group_1" data-name="Group 1">
+        <path id="Path_1" data-name="Path 1" class="cls-2" d="M15,0A15,15,0,1,0,30,15,15,15,0,0,0,15,0Zm0,29A14,14,0,1,1,29,15,14,14,0,0,1,15,29Z"/>
+        <path id="Path_2" data-name="Path 2" class="cls-2" d="M12,24a3,3,0,1,0,3,3A3,3,0,0,0,12,24Zm0,5a2,2,0,1,1,2-2A2,2,0,0,1,12,29Z" transform="translate(-4.5 -12)"/>
+        <path id="Path_3" data-name="Path 3" class="cls-2" d="M27,24a3,3,0,1,0,3,3A3,3,0,0,0,27,24Zm0,5a2,2,0,1,1,2-2A2,2,0,0,1,27,29Z" transform="translate(-12 -12)"/>
+        <path id="Path_4" data-name="Path 4" class="cls-2" d="M42,24a3,3,0,1,0,3,3A3,3,0,0,0,42,24Zm0,5a2,2,0,1,1,2-2A2,2,0,0,1,42,29Z" transform="translate(-19.5 -12)"/>
+      </g>
+    </g>
+  </g>
+</svg>
