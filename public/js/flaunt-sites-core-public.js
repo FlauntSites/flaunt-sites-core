@@ -1,24 +1,5 @@
 /**
  *
- * Mobile Sharebar display
- *
- */
-
-const mobileDisplaySharebar = function() {
-  const more = document.querySelector(".fs-drawer-mobile-more svg")
-  const drawer = document.querySelector(".fs-drawer")
-
-  if (more) {
-    more.addEventListener("click", function() {
-      more.classList.toggle("toggled")
-      drawer.classList.toggle("toggled")
-    })
-  }
-}
-// window.onload = mobileDisplaySharebar
-
-/**
- *
  * Adjusts Swiper Slider to Responsive/Fixed Height based on 3/2 ratio.
  *
  */

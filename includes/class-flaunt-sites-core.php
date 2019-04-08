@@ -262,7 +262,7 @@ require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sit
  * Loads the Sharebar
  */
 
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-sharebar.php';
+// require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-sharebar.php';
 
 
 /**
@@ -340,7 +340,7 @@ function fsc_social_icons( $social_network ) {
 
 		if ( '' !== $social_url ): { ?>
 
-			<a class="social-icon" target="_blank" href="<?php echo esc_url( $social_url ) ?>">
+			<a class="social-icon" target="_blank" href="<?php echo esc_url( $social_url ) ?>" title="<?php echo $social_network; ?>">
 				<svg class="fs-icons">
 					<use xlink:href="#icon-<?php echo $social_network; ?>-square"></use>
 				</svg>
