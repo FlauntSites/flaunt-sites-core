@@ -316,7 +316,7 @@ function enqueue_main_scripts(){
 	wp_enqueue_style( 'swiper_styles', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css' );
 
 }
-
+add_action( 'admin_enqueue_scripts', 'enqueue_main_scripts' );
 add_action( 'login_enqueue_scripts', 'enqueue_main_scripts' );
 add_action( 'wp_enqueue_scripts', 'enqueue_main_scripts' );
 
@@ -325,6 +325,8 @@ add_action( 'wp_enqueue_scripts', 'enqueue_main_scripts' );
 //Adds additional thumbnail sizes.
 add_image_size( 'medium_square', '300', '300', true );
 add_image_size( 'medium_large_square', '600', '600', true );
+add_image_size( 'large_square', '900', '900', true );
+add_image_size( 'large_2_1', '900', '450', true );
 add_image_size( 'oversized', '1400', '1400', false );
 add_image_size( 'fullscreen', '2000', '2000', false );
 

@@ -98,14 +98,36 @@ class Flaunt_Sites_Core_Admin {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/flaunt-sites-core-admin.js', array( 'jquery' ), $this->version, true );
+		wp_enqueue_script( 'flaunt_sites_core_welcome_modal', plugin_dir_url( __FILE__ ) . 'js/flaunt-sites-core-welcome-modal.js', array(), 20190419, true );
+
+		wp_localize_script('flaunt_sites_core_welcome_modal', 'BB_DATA', [
+			'bb_ajax_url' => admin_url( 'admin-ajax.php' ),
+			'bb_nonce'    => wp_create_nonce( 'bb_nonce' ),
+		]);
+		// wp_localize_script( $this->plugin_name, 'user_modal', array( 'newUser' => '1' ) );
 
 	}
 
 }
-
-
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/flaunt-sites-core-admin-display.php';
-// require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/flaunt-sites-core-admin-tutorial-page.php';
+
+/**
+ * Displays the modal on first login.
+ */
+function fsc_display_modal_first_login() {
+
+	if ( is_user_logged_in() ) {
+		// Get current total amount of logins (should be at least 1).
+		$new_user = get_user_meta( get_current_user_id(), '_new_user', true );
+		// If it's 1, it's their first time logging in, display the Modal.
+		if ( '1' === $new_user ) {
+			update_user_meta( get_current_user_id(), '_new_user', '0' );
+		}
+	}
+}
+// add_action( 'admin_footer', 'fsc_display_modal_first_login' );
+
+
 
 
 /**************************************************
@@ -150,7 +172,7 @@ function fsc_change_post_links() {
 	unset($menu[20]);
 }
 
-add_action('admin_menu', 'fsc_change_post_links');
+add_action( 'admin_menu', 'fsc_change_post_links' );
 
 
 
@@ -158,9 +180,9 @@ add_action('admin_menu', 'fsc_change_post_links');
 ADMIN - REORDERS PAGES ABOVE POSTS
 **************************************************/
 function fsc_unregister_tags() {
-    unregister_taxonomy_for_object_type('post_tag', 'post');
+    unregister_taxonomy_for_object_type( 'post_tag', 'post' );
 }
-add_action('init', 'fsc_unregister_tags');
+add_action( 'init', 'fsc_unregister_tags' );
 
 
 
@@ -169,61 +191,61 @@ add_action('init', 'fsc_unregister_tags');
 ADMIN - ADDS A CLIENT SELECTOR TO BLOG & REVIEW POSTS
 **************************************************/
 
-function fsc_client_id_selector() {
+// function fsc_client_id_selector() {
 
-	acf_add_local_field_group(array (
-		'key' => 'group_58ebfeddc7579',
-		'title' => 'Client ID',
-		'fields' => array (
-			array (
-				'key' => 'field_58ebfeeb9e65a',
-				'label' => 'Client ID',
-				'name' => 'fsc_client_id',
-				'type' => 'taxonomy',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array (
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'taxonomy' => 'client_id',
-				'field_type' => 'select',
-				'allow_null' => 0,
-				'add_term' => 1,
-				'save_terms' => 1,
-				'load_terms' => 0,
-				'return_format' => 'id',
-				'multiple' => 0,
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'post',
-				),
-			),
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'reviews',
-				),
-			),
-		),
-		'menu_order' => 0,
-		'position' => 'side',
-		'style' => 'default',
-		'label_placement' => 'top',
-		'instruction_placement' => 'label',
-		'hide_on_screen' => '',
-		'active' => 1,
-		'description' => '',
-	));
+// 	acf_add_local_field_group(array (
+// 		'key' => 'group_58ebfeddc7579',
+// 		'title' => 'Client ID',
+// 		'fields' => array (
+// 			array (
+// 				'key' => 'field_58ebfeeb9e65a',
+// 				'label' => 'Client ID',
+// 				'name' => 'fsc_client_id',
+// 				'type' => 'taxonomy',
+// 				'instructions' => '',
+// 				'required' => 0,
+// 				'conditional_logic' => 0,
+// 				'wrapper' => array (
+// 					'width' => '',
+// 					'class' => '',
+// 					'id' => '',
+// 				),
+// 				'taxonomy' => 'client_id',
+// 				'field_type' => 'select',
+// 				'allow_null' => 0,
+// 				'add_term' => 1,
+// 				'save_terms' => 1,
+// 				'load_terms' => 0,
+// 				'return_format' => 'id',
+// 				'multiple' => 0,
+// 			),
+// 		),
+// 		'location' => array (
+// 			array (
+// 				array (
+// 					'param' => 'post_type',
+// 					'operator' => '==',
+// 					'value' => 'post',
+// 				),
+// 			),
+// 			array (
+// 				array (
+// 					'param' => 'post_type',
+// 					'operator' => '==',
+// 					'value' => 'reviews',
+// 				),
+// 			),
+// 		),
+// 		'menu_order' => 0,
+// 		'position' => 'side',
+// 		'style' => 'default',
+// 		'label_placement' => 'top',
+// 		'instruction_placement' => 'label',
+// 		'hide_on_screen' => '',
+// 		'active' => 1,
+// 		'description' => '',
+// 	));
 
-}
+// }
 
 // add_action('init', 'fsc_client_id_selector');
