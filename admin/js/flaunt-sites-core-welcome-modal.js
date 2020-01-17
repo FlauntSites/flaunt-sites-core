@@ -94,7 +94,7 @@ data.init = () => {}
 /**
  * WordPress Tutorials route.
  */
-data.tutsRoute = () => "https://flauntsites.local/wp-json/wp/v2"
+data.tutsRoute = () => "https://flauntsites.com/wp-json/wp/v2"
 
 /**
  * Get Noticed SEO Tutorials route.
