@@ -188,6 +188,44 @@ add_action( 'init', 'fsc_unregister_tags' );
 
 
 /**************************************************
+ADMIN - ADDS CURRENT THEME TO SITES LIST
+ **************************************************/
+class Site_List_Current_Theme {
+	public static function init() {
+		$class                 = __CLASS__;
+		if ( empty( $GLOBALS[ $class ] ) )
+			$GLOBALS[ $class ] = new $class;
+	}
+	public function __construct() {
+		add_filter( 'wpmu_blogs_columns', array( $this, 'get_id' ) );
+		add_action( 'manage_sites_custom_column', array( $this, 'add_columns' ), 10, 2 );
+		add_action( 'manage_blogs_custom_column', array( $this, 'add_columns' ), 10, 2 );
+		add_action( 'admin_footer', array( $this, 'add_style' ) );
+	}
+	public function add_columns( $column_name, $blog_id ) {
+		if ( 'blog_id' === $column_name ) {
+			echo esc_html( $blog_id );
+			// Render column value.
+		} elseif ( 'current_theme' === $column_name ) {
+			echo esc_html( get_blog_option( $blog_id, 'current_theme', '--' ) );
+		}
+		return $column_name;
+	}
+	// Add in a column header.
+	public function get_id( $columns ) {
+		$columns['blog_id'] = __( 'ID' );
+		//add extra header to table
+		$columns['current_theme'] = __( 'Current Theme' );
+
+		return $columns;
+	}
+	public function add_style() {
+		echo '<style>#blog_id { width:7%; }</style>';
+	}
+}
+add_action( 'init', array( 'Site_List_Current_Theme', 'init' ) );
+
+/**************************************************
 ADMIN - ADDS A CLIENT SELECTOR TO BLOG & REVIEW POSTS
 **************************************************/
 
