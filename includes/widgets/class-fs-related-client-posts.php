@@ -15,7 +15,7 @@ class FS_Related_Client_Posts extends WP_Widget {
 	 */
 	public function __construct() {
 		$widget_ops = array( 
-			'classname' => 'fs_related_client_posts',
+			'classname'   => 'fs_related_client_posts',
 			'description' => 'Includes Client reviews on this page.',
 		);
 		parent::__construct( 'fs_related_client_posts', 'FS Client Posts', $widget_ops );

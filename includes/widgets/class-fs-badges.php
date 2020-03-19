@@ -47,20 +47,19 @@ class FS_Badges extends WP_Widget {
 
 		<?php if ( $the_query->have_posts() ) : ?>
 
+			<div class="badge-group">
+				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+					<div class="badge"><a href="<?php the_field( 'fsc_badge_link' ); ?>"><?php the_post_thumbnail( '' ); ?></a></div>
 
-						<div class="badge-group">
-							<div class="badge"><a href="<?php the_field( 'fsc_badge_link' ); ?>"><?php the_post_thumbnail( '' ); ?></a></div>
-						</div>
+				<?php endwhile; ?>
+			</div>
 
-					<?php endwhile; ?>
+			<?php wp_reset_postdata(); ?>
 
-					<?php wp_reset_postdata(); ?>
-
-					<?php else : ?>
-						<p><?php _e( 'Oops. Looks like you need to add some Badges.' ); ?></p>
-					<?php endif; ?>
+			<?php else : ?>
+				<p><?php _e( 'Oops. Looks like you need to add some Badges.' ); ?></p>
+			<?php endif; ?>
 		<?php
 	}
 	// End Widget Output.
