@@ -9,7 +9,7 @@
 	$youtube = $social_options['youtube_url'];
 	$linkedin = $social_options['linkedin_url'];
 
-	if ( ! '' === $facebook ) {
+	if ( '' !== $facebook ) {
 		?>
 		<a class="social-icon" target="_blank" href="<?php echo esc_url( $facebook ); ?>" title="Facebook">
 			<svg class="fs-icons">
@@ -19,7 +19,7 @@
 		<?php
 	}
 
-	if ( ! '' === $twitter ) {
+	if ( '' !== $twitter ) {
 		?>
 		<a class="social-icon" target="_blank" href="<?php echo __( 'https://twitter.com/' ) . $twitter; ?>" title="Twitter">
 			<svg class="fs-icons">
@@ -29,7 +29,7 @@
 		<?php
 	}
 
-	if ( ! '' === $instagram ) {
+	if ( '' !== $instagram ) {
 		?>
 		<a class="social-icon" target="_blank" href="<?php echo esc_url( $instagram ); ?>" title="Instagram">
 			<svg class="fs-icons">
@@ -39,7 +39,7 @@
 		<?php
 	}
 
-	if ( ! '' === $pinterest ) {
+	if ( '' !== $pinterest ) {
 		?>
 		<a class="social-icon" target="_blank" href="<?php echo esc_url( $pinterest ); ?>" title="Pinterest">
 			<svg class="fs-icons">
@@ -49,7 +49,7 @@
 		<?php
 	}
 
-	if ( ! '' === $youtube ) {
+	if ( '' !== $youtube ) {
 		?>
 		<a class="social-icon" target="_blank" href="<?php echo esc_url( $youtube ); ?>" title="YouTube">
 			<svg class="fs-icons">
@@ -59,7 +59,7 @@
 		<?php
 	}
 
-	if ( ! '' === $linkedin ) {
+	if ( '' !== $linkedin ) {
 		?>
 		<a class="social-icon" target="_blank" href="<?php echo esc_url( $linkedin ); ?>" title="LinkedIn">
 			<svg class="fs-icons">
