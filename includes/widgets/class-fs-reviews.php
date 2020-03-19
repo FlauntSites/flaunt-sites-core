@@ -60,7 +60,8 @@ class FS_Reviews extends WP_Widget {
 	<?php endif; ?>
 
 
-	<?php }
+		<?php
+	}
 
 	/**
 	 * Outputs the options form on admin
@@ -82,6 +83,6 @@ class FS_Reviews extends WP_Widget {
 	}
 }
 
-add_action( 'widgets_init', function(){
+add_action( 'widgets_init', function() {
 	register_widget( 'FS_Reviews' );
 });
