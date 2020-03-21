@@ -16,7 +16,7 @@
  * Plugin Name:       Flaunt Sites Core
  * GitHub Plugin URI: https://github.com/FlauntSites/flaunt-sites-core
  * Description:       Controls all of the Flaunt Sites functions.
- * Version:           0.7.3
+ * Version:           0.7.4
  * Author:            William Bay
  * Author URI:        http://williambay.com
  * License:           GPL-2.0+
@@ -73,3 +73,5 @@ function run_flaunt_sites_core() {
 
 }
 run_flaunt_sites_core();
+
+
