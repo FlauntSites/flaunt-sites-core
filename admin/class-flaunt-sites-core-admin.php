@@ -111,6 +111,15 @@ class Flaunt_Sites_Core_Admin {
 }
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/flaunt-sites-core-admin-display.php';
 
+
+/**
+ * Disable CORS
+ */
+// add_filter('wp_headers', function ($headers) {
+// 	$headers['Access-Control-Allow-Origin'] = '*';
+// 	return $headers;
+// });
+
 /**
  * Displays the modal on first login.
  */
@@ -224,66 +233,3 @@ class Site_List_Current_Theme {
 	}
 }
 add_action( 'init', array( 'Site_List_Current_Theme', 'init' ) );
-
-/**************************************************
-ADMIN - ADDS A CLIENT SELECTOR TO BLOG & REVIEW POSTS
-**************************************************/
-
-// function fsc_client_id_selector() {
-
-// 	acf_add_local_field_group(array (
-// 		'key' => 'group_58ebfeddc7579',
-// 		'title' => 'Client ID',
-// 		'fields' => array (
-// 			array (
-// 				'key' => 'field_58ebfeeb9e65a',
-// 				'label' => 'Client ID',
-// 				'name' => 'fsc_client_id',
-// 				'type' => 'taxonomy',
-// 				'instructions' => '',
-// 				'required' => 0,
-// 				'conditional_logic' => 0,
-// 				'wrapper' => array (
-// 					'width' => '',
-// 					'class' => '',
-// 					'id' => '',
-// 				),
-// 				'taxonomy' => 'client_id',
-// 				'field_type' => 'select',
-// 				'allow_null' => 0,
-// 				'add_term' => 1,
-// 				'save_terms' => 1,
-// 				'load_terms' => 0,
-// 				'return_format' => 'id',
-// 				'multiple' => 0,
-// 			),
-// 		),
-// 		'location' => array (
-// 			array (
-// 				array (
-// 					'param' => 'post_type',
-// 					'operator' => '==',
-// 					'value' => 'post',
-// 				),
-// 			),
-// 			array (
-// 				array (
-// 					'param' => 'post_type',
-// 					'operator' => '==',
-// 					'value' => 'reviews',
-// 				),
-// 			),
-// 		),
-// 		'menu_order' => 0,
-// 		'position' => 'side',
-// 		'style' => 'default',
-// 		'label_placement' => 'top',
-// 		'instruction_placement' => 'label',
-// 		'hide_on_screen' => '',
-// 		'active' => 1,
-// 		'description' => '',
-// 	));
-
-// }
-
-// add_action('init', 'fsc_client_id_selector');
