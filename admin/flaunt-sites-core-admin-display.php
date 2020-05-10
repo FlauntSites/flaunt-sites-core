@@ -69,5 +69,3 @@ add_action( 'wp_login', 'fsc_new_user', 10, 2 );
 // 	}
 // }
 // add_action( 'admin_footer', 'fsc_display_modal_first_login' );
-
-

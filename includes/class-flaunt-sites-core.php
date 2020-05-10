@@ -329,25 +329,3 @@ add_image_size( 'large_square', '900', '900', true );
 add_image_size( 'large_2_1', '900', '450', true );
 add_image_size( 'oversized', '1400', '1400', false );
 add_image_size( 'fullscreen', '2000', '2000', false );
-
-
-/**
- * Controls the output of Social Media icons.
- *
- */
-function fsc_social_icons( $social_network ) {
-		$social_network = $social_network;
-		$fsc_options = get_option( 'fsc_options' ); 
-		$social_url = $fsc_options[ 'fsc_' . $social_network . '_url' ];
-
-		if ( '' !== $social_url ): { ?>
-
-			<a class="social-icon" target="_blank" href="<?php echo esc_url( $social_url ) ?>" title="<?php echo $social_network; ?>">
-				<svg class="fs-icons">
-					<use xlink:href="#icon-<?php echo $social_network; ?>-square"></use>
-				</svg>
-			</a>
-
-		<?php
-		} endif;
-}
