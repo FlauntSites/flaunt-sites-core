@@ -227,27 +227,10 @@ class Flaunt_Sites_Core {
  */
 
 $my_theme = wp_get_theme();
-if ($my_theme == 'Padang Padang'){
-
-	// Home fields
-	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-home-fields.php';
-	// Other fields
-	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-option-fields.php';
+if ( $my_theme == 'Padang Padang' ) {
 	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-service-fields.php';
 	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-reviews-fields.php';
-	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-badges-fields.php';	
-
-	// ADDS AN OPTION PAGE
-	if( function_exists('acf_add_options_page') ) {
-
-		acf_add_options_page(
-			$args = array(
-				'page_title' 	=> 'Flaunt Options',
-			)
-		);
-
-	}
-
+	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-badges-fields.php';
 }
 
 /**
