@@ -219,6 +219,7 @@ class Site_List_Current_Theme {
 			echo esc_html( get_blog_option( $blog_id, 'current_theme', '--' ) );
 		}
 		return $column_name;
+
 	}
 	// Add in a column header.
 	public function get_id( $columns ) {
