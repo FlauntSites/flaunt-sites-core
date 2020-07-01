@@ -125,6 +125,11 @@ class Flaunt_Sites_Core {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'login/class-flaunt-sites-core-login.php';
 
+		/**
+		 * The class responsible for defining all actions that occur in the login area.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'login/class-flaunt-sites-core-instagram-api-response.php';
+	
 
 		$this->loader = new Flaunt_Sites_Core_Loader();
 
@@ -229,9 +234,9 @@ class Flaunt_Sites_Core {
 $my_theme = wp_get_theme();
 if ( $my_theme == 'Padang Padang' ) {
 	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-service-fields.php';
-	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-reviews-fields.php';
-	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-badges-fields.php';
 }
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-reviews-fields.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-badges-fields.php';
 
 /**
  * Loads all Core Custom Post Types
@@ -287,15 +292,15 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 function enqueue_main_scripts(){
 
 	//Adds Greensock support.
-	wp_enqueue_script( 'greensock', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js');
+	wp_enqueue_script( 'greensock', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js', array(), date( 'Ymd  H:i:s' ), true);
 
 	//Adds Scrollmagik support.
-	wp_enqueue_script( 'scrollmagic', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js' );
+	wp_enqueue_script( 'scrollmagic', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js', array(), date( 'Ymd  H:i:s' ), true );
 	// wp_enqueue_script( 'scrollmagic_indicators', plugin_dir_url( dirname( __FILE__ ) ) . 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js' );
-	wp_enqueue_script( 'scrollmagic_gsap_support', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js', array(), '20180816' );
+	wp_enqueue_script( 'scrollmagic_gsap_support', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js', array(), date( 'Ymd  H:i:s' ), true );
 
 	//Adds Swiper Slider support.
-	wp_enqueue_script( 'swiper_scripts', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js', array(), '20200213' );
+	wp_enqueue_script( 'swiper_scripts', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js', array(), date( 'Ymd  H:i:s' ), true );
 	wp_enqueue_style( 'swiper_styles', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css' );
 
 }
