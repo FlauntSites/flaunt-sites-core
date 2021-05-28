@@ -234,3 +234,16 @@ class Site_List_Current_Theme {
 	}
 }
 add_action( 'init', array( 'Site_List_Current_Theme', 'init' ) );
+
+
+
+/**************************************************
+ADMIN - GRANTS ADMINS ABILITY TO EDIT ADDITIONAL CSS IN THE CUSTOMIZER.
+**************************************************/
+function multisite_custom_css_map_meta_cap( $caps, $cap ) {
+	if ( 'edit_css' === $cap && is_multisite() ) {
+		$caps = array( 'edit_theme_options' );
+	}
+	return $caps;
+}
+add_filter( 'map_meta_cap', 'multisite_custom_css_map_meta_cap', 20, 2 );
