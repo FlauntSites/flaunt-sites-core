@@ -271,6 +271,7 @@ require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/class-fs
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/class-fs-proofing.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/class-fs-related-client-posts.php';
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/class-fs-reviews.php';
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/class-fs-social-icons.php';
 
 
 /**
