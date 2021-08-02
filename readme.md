@@ -6,7 +6,7 @@ Controls all of the Flaunt Sites functions.
 
 ## Version:
 
-0.7.9
+0.8.0
 
 ## Contributors
 
@@ -19,11 +19,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.8.0] - 2021-08-02
+
+### Changed
+
+-Added widget for social media icons.
+
 ## [0.7.9] - 2021-05-28
 
 ### Changed
 
--Added rel=noopener and aria labels to social media links.
+-Granted Admins editing ability for Additional CSS section in Customizer.
 
 ## [0.7.8] - 2020-05-13
 

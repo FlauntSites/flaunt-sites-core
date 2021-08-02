@@ -61,6 +61,11 @@
 		</g>
 	</symbol>
 
+	<symbol id="icon-quotes-left" viewBox="0 0 32 32">
+		<title>Left Quote</title>
+		<path d="M7.031 14c3.866 0 7 3.134 7 7s-3.134 7-7 7-7-3.134-7-7l-0.031-1c0-7.732 6.268-14 14-14v4c-2.671 0-5.182 1.040-7.071 2.929-0.364 0.364-0.695 0.751-0.995 1.157 0.357-0.056 0.724-0.086 1.097-0.086zM25.031 14c3.866 0 7 3.134 7 7s-3.134 7-7 7-7-3.134-7-7l-0.031-1c0-7.732 6.268-14 14-14v4c-2.671 0-5.182 1.040-7.071 2.929-0.364 0.364-0.695 0.751-0.995 1.157 0.358-0.056 0.724-0.086 1.097-0.086z"></path>
+	</symbol>
+
     <symbol id="icon-more" viewBox="0 0 30 30">
         <g id="Symbol_1_1" data-name="Symbol 1 – 1" transform="translate(-323 -560)">
             <circle id="Ellipse_1" data-name="Ellipse 1" style="fill: rgba(0,0,0,0.75);" cx="15" cy="15" r="15" transform="translate(323 560)"/>
