@@ -7,8 +7,11 @@
 	$instagram = $social_options['instagram_url'];
 	$pinterest = $social_options['pinterest_url'];
 	$youtube = $social_options['youtube_url'];
-	$vimeo = $social_options['vimeo_url'];
 	$linkedin = $social_options['linkedin_url'];
+	
+	// Social icons that aren't managed by Yoast
+	$additional_social_options = get_option( 'fsc_options', '' );
+	$vimeo = $additional_social_options['vimeo_url'];
 	
 	if ( '' !== $facebook ) {
 		?>
