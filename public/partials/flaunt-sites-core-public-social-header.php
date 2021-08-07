@@ -7,6 +7,7 @@
 	$instagram = $social_options['instagram_url'];
 	$pinterest = $social_options['pinterest_url'];
 	$youtube = $social_options['youtube_url'];
+	$vimeo = $social_options['vimeo_url'];
 	$linkedin = $social_options['linkedin_url'];
 	
 	if ( '' !== $facebook ) {
@@ -54,6 +55,16 @@
 		<a class="social-icon" target="_blank" rel="noopener" aria-label="Youtube" href="<?php echo esc_url( $youtube ); ?>" title="YouTube">
 			<svg class="fs-icons">
 				<use xlink:href="#icon-youtube-square"></use>
+			</svg>
+		</a>
+		<?php
+	}
+
+	if ( '' !== $vimeo ) {
+		?>
+		<a class="social-icon" target="_blank" rel="noopener" aria-label="Vimeo" href="<?php echo esc_url( $vimeo ); ?>" title="Vimeo">
+			<svg class="fs-icons">
+				<use xlink:href="#icon-vimeo-square"></use>
 			</svg>
 		</a>
 		<?php
