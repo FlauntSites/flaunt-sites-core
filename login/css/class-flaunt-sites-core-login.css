@@ -27,8 +27,10 @@ body.wu-setup {
 }
 
 .login h1 a {
-    background-size: contain !important;
     margin-bottom: 0;
+	background-size: contain;
+	height: 84px;
+	width: 100%;
 }
 
 #loginform {
