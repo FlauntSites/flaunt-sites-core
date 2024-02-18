@@ -11,7 +11,7 @@
 	
 	// Social icons that aren't managed by Yoast
 	$additional_social_options = get_option( 'fsc_options', '' );
-	$vimeo = $additional_social_options['vimeo_url'];
+	$vimeo = $additional_social_options['vimeo_url'] ? $additional_social_options['vimeo_url'] : '';
 	
 	if ( '' !== $facebook ) {
 		?>
