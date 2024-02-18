@@ -100,6 +100,3 @@ class Flaunt_Sites_Core_Public {
 	}
 
 }
-
-
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/flaunt-sites-core-public-schema.php';
