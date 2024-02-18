@@ -98,77 +98,9 @@ class Flaunt_Sites_Core_Admin {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/flaunt-sites-core-admin.js', array( 'jquery' ), $this->version, true );
-		wp_enqueue_script( 'flaunt_sites_core_welcome_modal', plugin_dir_url( __FILE__ ) . 'js/flaunt-sites-core-welcome-modal.js', array(), 20190419, true );
-
-		wp_localize_script('flaunt_sites_core_welcome_modal', 'BB_DATA', [
-			'bb_ajax_url' => admin_url( 'admin-ajax.php' ),
-			'bb_nonce'    => wp_create_nonce( 'bb_nonce' ),
-		]);
-		// wp_localize_script( $this->plugin_name, 'user_modal', array( 'newUser' => '1' ) );
-
 	}
 
 }
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/flaunt-sites-core-admin-display.php';
-
-
-/**
- * Disable CORS
- */
-// add_filter('wp_headers', function ($headers) {
-// 	$headers['Access-Control-Allow-Origin'] = '*';
-// 	return $headers;
-// });
-
-/**
- * Displays the modal on first login.
- */
-function fsc_display_modal_first_login() {
-
-	if ( is_user_logged_in() ) {
-		// Get current total amount of logins (should be at least 1).
-		$new_user = get_user_meta( get_current_user_id(), '_new_user', true );
-		// If it's 1, it's their first time logging in, display the Modal.
-		if ( '1' === $new_user ) {
-			update_user_meta( get_current_user_id(), '_new_user', '0' );
-		}
-	}
-}
-// add_action( 'admin_footer', 'fsc_display_modal_first_login' );
-
-
-
-
-/**************************************************
-TAWK.TO - ADDS TAWK.TO SUPPORT CHAT TO ALL BUT SUPERADMIN ADMIN AREAS
-**************************************************/
-
-function fsc_enqueue_tawkto() {
-	$blog_id = get_current_blog_id();
-		if ( 1 != $blog_id && is_admin() ) {
-
-			wp_enqueue_script( 'Tawk-To', plugin_dir_url( __FILE__ ) . 'js/tawk-to.js', array(), '20180522', true );
-
-		}
-		
-}
-
-add_action( 'init', 'fsc_enqueue_tawkto' );
-
-
-/**************************************************
-ACF - REMOVES ACF OPTIONS FROM ALL BUT SUPER-ADMIN
-**************************************************/
-
-function fsc_acf_show_admin( $show ) {
-	
-	return current_user_can('manage_network_options');
-	
-}
-
-add_filter('acf/settings/show_admin', 'fsc_acf_show_admin');
-
-
 
 /**************************************************
 ADMIN - REORDERS PAGES ABOVE POSTS
@@ -234,16 +166,3 @@ class Site_List_Current_Theme {
 	}
 }
 add_action( 'init', array( 'Site_List_Current_Theme', 'init' ) );
-
-
-
-/**************************************************
-ADMIN - GRANTS ADMINS ABILITY TO EDIT ADDITIONAL CSS IN THE CUSTOMIZER.
-**************************************************/
-function multisite_custom_css_map_meta_cap( $caps, $cap ) {
-	if ( 'edit_css' === $cap && is_multisite() ) {
-		$caps = array( 'edit_theme_options' );
-	}
-	return $caps;
-}
-add_filter( 'map_meta_cap', 'multisite_custom_css_map_meta_cap', 20, 2 );
