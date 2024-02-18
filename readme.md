@@ -6,7 +6,7 @@ Controls all of the Flaunt Sites functions.
 
 ## Version:
 
-0.8.3
+0.8.4
 
 ## Contributors
 
@@ -19,12 +19,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.8.4] - 2024-02-17
+
+### Changed
+
+-Conditional logic for Vimeo icon.
+-Removed Image schema json stuff.
+-Removed Sharebar loop.
+-Removed Admin stuff.
+-Removing Flaunt Sites Custom Post Types and Widgets.
+
 ## [0.8.3] - 2022-01-26
 
 ### Changed
 
 -Fixed Vimeo social media icon to pull from FSC Options (Vimeo not tracked by Yoast).
-
 
 ## [0.8.2] - 2021-08-07
 
