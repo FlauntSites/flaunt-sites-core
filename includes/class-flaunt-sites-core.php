@@ -128,7 +128,7 @@ class Flaunt_Sites_Core {
 		/**
 		 * The class responsible for defining all actions that occur in the login area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'login/class-flaunt-sites-core-instagram-api-response.php';
+		// require_once plugin_dir_path( dirname( __FILE__ ) ) . 'login/class-flaunt-sites-core-instagram-api-response.php';
 	
 
 		$this->loader = new Flaunt_Sites_Core_Loader();
@@ -226,54 +226,6 @@ class Flaunt_Sites_Core {
 
 }
 
-
-/**
- * ACF fields. Backwards compatible for Padang Padang until full Gutenberg integration.
- */
-
-$my_theme = wp_get_theme();
-if ( $my_theme == 'Padang Padang' ) {
-	require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-service-fields.php';
-}
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-reviews-fields.php';
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-badges-fields.php';
-
-/**
- * Loads all Core Custom Post Types
- * Services
- * Reviews
- * Badges
- */
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-custom-post-types.php';
-
-/**
- * Loads the Sharebar
- */
-
-// require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-flaunt-sites-core-sharebar.php';
-
-
-/**
- * Disables Yoast on specific CPTs
- */
-function fsc_remove_yoast_cpts() {
-	remove_meta_box( 'wpseo_meta', array( 'badges', 'reviews' ), 'normal' );
-}
-
-add_action( 'add_meta_boxes', 'fsc_remove_yoast_cpts', 100 );
-
-
-/**
- * Loads Flaunt Sites Core Widgets
- */
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/class-fs-badges.php';
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/class-fs-call-to-action.php';
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/class-fs-proofing.php';
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/class-fs-related-client-posts.php';
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/class-fs-reviews.php';
-require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/widgets/class-fs-social-icons.php';
-
-
 /**
  * REMOVES WP EMOJI
  */
@@ -282,8 +234,6 @@ remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
-
-
 /**
  * Enqueues Main Script files.
  *
@@ -291,15 +241,6 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
  *
  */
 function enqueue_main_scripts(){
-
-	//Adds Greensock support.
-	wp_enqueue_script( 'greensock', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js', array(), date( 'Ymd  H:i:s' ), true);
-
-	//Adds Scrollmagik support.
-	wp_enqueue_script( 'scrollmagic', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js', array(), date( 'Ymd  H:i:s' ), true );
-	// wp_enqueue_script( 'scrollmagic_indicators', plugin_dir_url( dirname( __FILE__ ) ) . 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js' );
-	wp_enqueue_script( 'scrollmagic_gsap_support', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js', array(), date( 'Ymd  H:i:s' ), true );
-
 	//Adds Swiper Slider support.
 	wp_enqueue_script( 'swiper_scripts', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js', array(), date( 'Ymd  H:i:s' ), true );
 	wp_enqueue_style( 'swiper_styles', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css' );
@@ -309,12 +250,3 @@ add_action( 'admin_enqueue_scripts', 'enqueue_main_scripts' );
 add_action( 'login_enqueue_scripts', 'enqueue_main_scripts' );
 add_action( 'wp_enqueue_scripts', 'enqueue_main_scripts' );
 
-
-
-//Adds additional thumbnail sizes.
-add_image_size( 'medium_square', '300', '300', true );
-add_image_size( 'medium_large_square', '600', '600', true );
-add_image_size( 'large_square', '900', '900', true );
-add_image_size( 'large_2_1', '900', '450', true );
-add_image_size( 'oversized', '1400', '1400', false );
-add_image_size( 'fullscreen', '2000', '2000', false );
